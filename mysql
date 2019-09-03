@@ -1,0 +1,12 @@
+SERVERNAME="mysql-vnpy"
+docker run \
+-e MYSQL_ROOT_PASSWORD=123456 \
+-d \
+--restart always \
+-h ${SERVERNAME} \
+--name=${SERVERNAME} \
+-v /data/mysql-vnpy/:/var/lib/mysql \
+mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
+## 
+## CREATE SCHEMA `vnpy` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
+## create database vnpy default charset utf8 collate utf8_unicode_ci;
