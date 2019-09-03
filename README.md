@@ -42,3 +42,7 @@ python main.py
 
 ## 其它
 由于国内无法直接访问交易所，因此需要科学上网，通过http代理的方式访问。也可以直接在国外的服务器上运行，这样省时省力。
+
+
+## 源代码
+https://github.com/stonejiang208/vnpy-docker
