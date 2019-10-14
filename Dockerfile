@@ -26,12 +26,12 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # 以下三行根据情况自选
-#RUN mkdir -p /opt/vnpy
+RUN mkdir -p /opt/vnpy
 
-COPY  https://github.com/vnpy/vnpy/archive/v2.0.6.tar.gz  /opt/vnpy
-#RUN git clone -b v2.0.6  https://github.com/vnpy/vnpy.git /opt/vnpy
+#COPY  https://github.com/vnpy/vnpy/archive/v2.0.7.tar.gz  /opt/vnpy
+RUN git clone -b v2.0.7  https://github.com/vnpy/vnpy.git /opt/vnpy
 
-ADD vnpy /opt/vnpy
+#ADD vnpy /opt/vnpy
 RUN cd /opt/vnpy && bash ./install.sh
 
 RUN mkdir -p /app
