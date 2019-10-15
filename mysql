@@ -2,6 +2,7 @@ SERVERNAME="mysql-vnpy"
 docker run \
 -e MYSQL_ROOT_PASSWORD=123456 \
 -d \
+-p 3366:3306 \
 --restart always \
 -h ${SERVERNAME} \
 --name=${SERVERNAME} \

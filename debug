@@ -1,6 +1,8 @@
 docker run --rm -it \
 --name "vnpy-builder" -h vnpy-builder \
--v `pwd`/vnpy:/app/vnpy \
+-v `pwd`/app:/app/ \
+-v `pwd`/vnpy:/vnpy/ \
 -v /data/vnpy-data/root:/root \
 --link "mysql-vnpy:mysql" \
+-w /app \
 vnpy-builder:dev
