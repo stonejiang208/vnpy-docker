@@ -29,13 +29,13 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN mkdir -p /opt/vnpy
 
 #COPY  https://github.com/vnpy/vnpy/archive/v2.0.7.tar.gz  /opt/vnpy
-RUN git clone -b v2.0.7  https://github.com/vnpy/vnpy.git /opt/vnpy
+#RUN git clone -b v2.0.7  https://github.com/vnpy/vnpy.git /opt/vnpy
 RUN git clone --depth 1 -b dev git@github.com:stonejiang208/vnpy-docker.git /opt/vnpy
 #ADD vnpy /opt/vnpy
 RUN cd /opt/vnpy && bash ./install.sh
 
-RUN mkdir -p /app
-COPY main.py /app/
+#RUN mkdir -p /app
+#COPY main.py /app/
 
 # WORKDIR /app
 # CMD ["python","main.py"]
