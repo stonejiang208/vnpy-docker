@@ -25,9 +25,6 @@ ENV LC_ALL zh_CN.UTF-8
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-# 以下三行根据情况自选
-#RUN mkdir -p /opt
-
 #COPY  https://github.com/vnpy/vnpy/archive/v2.0.7.tar.gz  /opt/vnpy
 RUN git clone -b v2.1.1 --depth 1  https://github.com/vnpy/vnpy.git /opt/vnpy
 #RUN git clone --depth 1 -b dev git@github.com:stonejiang208/vnpy-docker.git /opt/vnpy
